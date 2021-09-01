@@ -1,0 +1,11 @@
+Calculation started... parallel
+ Samples: 1000000000, PI = ~3.14161
+Finished in 93.797 seconds
+
+Calculation started... single
+ Samples: 1000000000, PI = ~3.14161
+Finished in 77.894 seconds
+
+Calculation started... p
+Samples: 1000000000, PI = ~3.14161
+Finished in 77.81 seconds
