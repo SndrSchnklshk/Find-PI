@@ -127,30 +127,26 @@ int main()
     cout << "-------------------" << endl;
     cout << " Find PI           " << endl;
     cout << "-------------------" << endl << endl;
-    cout << "Calculation started... p"<< endl;
+    cout << "Calculation started... "<< endl;
 
     clock_t start = clock();
 
     int samples = 1000000000;
    
-    std::vector<int> v(samples, 1);
-    esitmatePI_Parallel(v.begin(), v.end()); 
-    //--esitmatePI(samples); 
+    esitmatePI(samples); 
 
     double s =  std::chrono::duration<double, std::milli>(clock()-start).count() / 1000;
-    cout << "Finished in " << (s) << " seconds" << endl;
+    cout << "Serial calculation finished in " << (s) << " seconds" << endl;
+
+    cout << endl << endl;
+    cout << "Parallel Calculation started... "<< endl;
+
+    std::vector<int> v(samples, 1);
+    esitmatePI_Parallel(v.begin(), v.end()); 
+
+    s =  std::chrono::duration<double, std::milli>(clock()-start).count() / 1000;
+    cout << "Parallel calculation finished in " << (s) << " seconds" << endl;
 
     getchar();
 }
 
-//Calculation started... parallel
-// Samples: 1000000000, PI = ~3.14161
-//Finished in 93.797 seconds
-
-//Calculation started... single
-// Samples: 1000000000, PI = ~3.14161
-//Finished in 77.894 seconds
-
-//Calculation started... p
-//Samples: 1000000000, PI = ~3.14161
-//Finished in 77.81 seconds
