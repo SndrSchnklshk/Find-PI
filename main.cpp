@@ -14,18 +14,9 @@ using namespace std;
 constexpr int FLOAT_MIN = 0;
 constexpr int FLOAT_MAX = 1;
 
-void DEBUG_PRINT(float f) {
-    cout << f;
-}
-
-void DEBUG_PRINT(char* str) {
-    cout << str;
-}
-
-void DEBUG_PRINTLN(char* str) {
-    cout << str << endl;
-}
-
+/*
+Extracts numbers from a given (data) char array and returns it
+*/
 int extractNumbers(char* data, uint8_t len, int* output)
 {
     int res = 0;
@@ -72,6 +63,9 @@ int extractNumbers(char* data, uint8_t len, int* output)
     return res;
 }
 
+/*
+Estimates PI by a given number of samples
+*/
 float esitmatePI(long samples) {
      //std::srand(std::time(nullptr)); 
     std::random_device rd;
@@ -106,15 +100,12 @@ float esitmatePI_Parallel(RAIter first, RAIter last) {
     #pragma omp parallel for
     for (size_t i = 0; i < n; i++) {
         //--auto& elem = *(first + i);
-
         x = distr(eng);
         y = distr(eng);
         r = sqrt((x * x) + (y * y));
         if (r < 1)
             inside++;
-        
     }
-
     pi = ((float)inside / (float)n)* 4.0;
     cout << " Samples: " << n << ", PI = ~" << pi  << endl;
     return pi;
