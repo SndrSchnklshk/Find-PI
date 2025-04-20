@@ -6,7 +6,7 @@ One method to estimate the value of π (3.141592...) is by using a Monte Carlo m
 Code witten in C++ for testing purposes only. 
 Open `main.cpp` to check the code. 
 
-## Complile
+## Build
 Compile code with: G++. E.g.:
 `[PATH]\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe` 
 
